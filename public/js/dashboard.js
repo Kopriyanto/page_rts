@@ -13,7 +13,7 @@ function loadComponent(url, containerId){
 
 // load sidebar and navigation
 document.addEventListener("DOMContentLoaded", function() {
-    loadComponent('../../../components/sidebar.html', 'sidebarContainer');
+    loadComponent('sidebar.html', 'sidebarContainer');
 
     let openDropdown = null;
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
 });
-loadComponent('../../../components/navbar.html', 'navbarContainer');
+loadComponent('navbar.html', 'navbarContainer');
 
 const sidebarLinks = document.querySelectorAll('.sidebar-link');
 // Add click event listener to each link
