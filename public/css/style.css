@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.input-container {
+    position: relative;
+}
+
+.label-transform {
+    transform-origin: 0 0;
+    transitions: transform 0.2s ease-out;
+}
+
+.input-transformed:not(:placeholder-shown) + .label-transform,
+.input-transformed:focus + .label-transform {
+    @apply bg-white; 
+    @apply px-3;
+    transform: translateY(-0.9rem) scale(0.8);
+}
+
+.btn-primary{
+    @apply bg-gradient-to-r from-blue-500 to-blue-800;
+}
+
+.login-color{
+    @apply bg-gradient-to-r from-blue-500 to-blue-800;
+}
+
+.width-transition{
+    transition: width 0.3s ease-in-out;
+}
+
+.opacity-transition{
+    transition: opacity 0.3s ease-in-out;
+}
+
+.dropdown-transition{
+    transition: visibility 0.3s ease-in-out;
+}
+
+.margin-transition{
+    transition: margin 0.3s ease-in-out;
+}
+@media(max-width: 768px){
+    .fixed-md{
+        position: fixed;
+    }
+
+    .dropdown-sidebar{
+    @apply -translate-y-10;
+    @apply left-20; 
+    @apply py-2;
+    @apply space-y-2;
+    @apply bg-gray-50;
+    @apply divide-y;
+    @apply divide-gray-100;
+    @apply rounded-lg;
+    @apply shadow w-44;
+    }
+}
+
+
+/* #logo-sidebar{
+    display: none;
+} */
+
+/* #logo-sidebar {
+    flex: 0 0 auto;
+} */
+

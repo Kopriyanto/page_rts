@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/output.css">
+    <!-- <link rel="stylesheet" href="/public/css/style.css"> -->
+    <link href="../flowbite/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="flex w-full h-screen bg-gray-100">
+        <!-- Sidebar component -->
+        <div id="sidebarContainer"></div>    
+        <div class="flex gap-4 py-4 pr-4 flex-col flex-grow ml-24 md:ml-64 margin-transition">
+            <!-- Navigation bar component -->
+            <div id="navbarContainer" class="rounded-lg p-4 bg-white shadow-sm"></div>
+            <!-- Main content area -->
+            <div class="content bg-white h-screen rounded-lg shadow-sm" id="mainContent">
+                <!-- Content from links will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- load flowbite -->
+    <script src="../flowbite/dist/flowbite.min.js"></script>
+        <!-- load componetnt -->
+    <script src="/public/js/dashboard.js"></script>
+</body>
+</html>
