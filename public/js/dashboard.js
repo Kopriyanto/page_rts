@@ -5,6 +5,8 @@ function loadComponent(url, containerId){
     .then((response)=>response.text())
     .then((html)=>{
         document.getElementById(containerId).innerHTML = html;
+        openSidebar();
+        showSearch();
     })
     .catch((error)=>{
         console.error('Error loading component:', error);
@@ -14,6 +16,7 @@ function loadComponent(url, containerId){
 // load sidebar and navigation
 document.addEventListener("DOMContentLoaded", function() {
     loadComponent('sidebar.html', 'sidebarContainer');
+    loadComponent('navbar.html', 'navbarContainer');
 
     let openDropdown = null;
 
@@ -37,7 +40,44 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
 });
-loadComponent('navbar.html', 'navbarContainer');
+
+function openSidebar(){
+    const hamBtn = document.getElementById('ham-button');
+    const sidebar = document.getElementById('sidebarContainer');
+    const logoSidebar = document.getElementById('logo-sidebar');
+    const closeIcon = document.getElementById('close-sidebar');
+    const hamIcon = document.getElementById('ham-sidebar');
+    const rightContent = document.getElementById('right-content');
+
+    if (hamBtn && sidebar) {
+        hamBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar-md');
+            closeIcon.classList.toggle('hidden');
+            hamIcon.classList.toggle('hidden');
+            rightContent.classList.toggle('right-content', sidebar.classList.contains('sidebar-md'));
+
+            // sidebar.classList.add('transition-semua');
+            rightContent.classList.add('transition-semua');
+        });
+    }
+}
+
+function showSearch(){
+    const btnShow = document.getElementById('button-show-search');
+    const searchIcon = document.getElementById('search-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const search = document.getElementById('search-div');
+
+    if(btnShow && search){
+        btnShow.addEventListener('click', () =>{
+            // btnShow.classList.toggle('hidden');
+            searchIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            // console.log('berhasil');
+            search.classList.toggle('hidden');
+        })
+    }
+}
 
 const sidebarLinks = document.querySelectorAll('.sidebar-link');
 // Add click event listener to each link
@@ -57,6 +97,7 @@ sidebarLinks.forEach(link => {
         });
     });
   });
+
 // function loadContent(url){
 //     fetch(url)
 //     .then((response)=>response.text())

@@ -35,13 +35,23 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.dropdown-transition{
+.visibility-transition{
     transition: visibility 0.3s ease-in-out;
 }
 
 .margin-transition{
     transition: margin 0.3s ease-in-out;
 }
+
+.right-content{
+    @apply pl-4;
+    @apply md:pl-0;
+}
+
+.transition-semua{
+    transition: all 0.5s ease-in-out;
+}
+
 @media(max-width: 768px){
     .fixed-md{
         position: fixed;
@@ -57,6 +67,20 @@
     @apply divide-gray-100;
     @apply rounded-lg;
     @apply shadow w-44;
+    }
+
+    .sidebar-md{
+        @apply w-0;
+        @apply overflow-hidden;
+        transition: left 0.3s ease;
+        /* transition: visibility 0.5s ease-in-out; */
+    }
+
+}
+
+@media(min-width: 768px){
+    .ham{
+        @apply hidden;
     }
 }
 
